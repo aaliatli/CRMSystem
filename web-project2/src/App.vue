@@ -1,5 +1,6 @@
 <script setup>
 import Menu from './components/Header/Menu.vue';
+import HomePage from './components/HomePage.vue';
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import Menu from './components/Header/Menu.vue';
 export default {
   components:{
     Menu,
+    HomePage
   },
   server: {
     open: true 

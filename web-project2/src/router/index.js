@@ -4,9 +4,9 @@ import AddNotification from '@/components/AddNotification.vue'
 import Settings from '@/components/Settings.vue'
 import Users from '@/components/Users.vue'
 import Analysis from '@/components/Analysis.vue'
-import AllNotifications from '@/components/AllNotifications.vue'
 import Reports from '@/components/Reports.vue'
-import StarNotifications from '@/components/StarNotifications.vue'
+import StoreNotifications from '@/components/StoreNotifications.vue'
+import ItemDepositNotifications from '@/components/ItemDepositNotifications.vue'
 
 
 const routes = [
@@ -16,8 +16,8 @@ const routes = [
   { path: '/sikayetler', component: Reports},
   { path: '/kullanicilar', component: Users},
   { path: '/analizler', component: Analysis},
-  { path: '/bildirimler', component: AllNotifications},
-  { path: '/yildizli-bildirimler', component: StarNotifications}
+  { path: '/bildirimler', component: ItemDepositNotifications},
+  { path: '/magaza-bildirimleri', component: StoreNotifications}
 
 ]
 

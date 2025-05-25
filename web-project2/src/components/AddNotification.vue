@@ -6,7 +6,7 @@
           <tr>
             <td class="notification-top">
               <label class="notification-label">Bildirim Seçin</label>
-              <select v-model="service" required>
+              <select v-model="service" class="select" required>
                 <option value="">Seçiniz</option>
                 <option>Mağaza Lokasyon</option>
                 <option>Tekerlekli Sandalye</option>
@@ -23,7 +23,8 @@
                   </div>
                   <div class="input-group">
                     <label>Telefon Numarası:</label>
-                    <input type="tel" placeholder="05xx xxx xx xx" :disabled="isStoreLocation" v-model="phone" required />
+                    <input type="tel" placeholder="05xx xxx xx xx" :disabled="isStoreLocation" v-model="phone" required
+                    maxlength="10" minlength="10" pattern="[0-9]{10}" inputmode="numeric" />
                   </div>
                 </div>
 
@@ -188,15 +189,15 @@ export default {
 
       try {
         const response = await axios.post('http://localhost:8081/api/notifications', payload);
-        if (response.status === 200) { // Başarılı gönderim kontrolü
+        if (response.status === 200) { 
           this.notification.push({
-            type: this.service, // Bildirim türünü sakla
+            type: this.service, 
             name: this.name,
             phone: this.phone,
             mail: this.mail,
             description: this.description,
             deskLocation: this.deskLocation,
-            storeLocation: this.storeLocation, // Mağaza lokasyonunu da sakla
+            storeLocation: this.storeLocation, 
           });
           this.sendedOption = true;
           setTimeout(() => {
@@ -205,7 +206,6 @@ export default {
         }
       } catch (error) {
         console.error("Bildirim gönderme hatası:", error);
-        // Hata durumunda kullanıcıya bilgi verebilirsiniz.
       } finally {
         this.name = '';
         this.phone = '';
@@ -349,5 +349,8 @@ li{
   border: 1px solid #ccc;
   padding: 6px;
   border-radius: 4px;
+}
+.select{
+  width: 100%;
 }
 </style>

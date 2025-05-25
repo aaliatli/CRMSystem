@@ -11,16 +11,14 @@
           </svg>
         </div>
 
-        <!-- Soldaki Açılır Menü -->
         <transition name="fade">
           <div v-if="leftMenuOpen" class="dropdownMenu left" @click.stop>
             <router-link to="/bildirimler" class="dropdownItem" @click.native="closeMenus">Emanet Bildirimleri</router-link>
             <router-link to="/sikayetler" class="dropdownItem" @click.native="closeMenus">Şikayet Bildirimleri</router-link>
-            <router-link to="/yildizli-bildirimler" class="dropdownItem" @click.native="closeMenus">Yıldızlı Bildirimler</router-link>
+            <router-link to="/magaza-bildirimleri" class="dropdownItem" @click.native="closeMenus">Mağaza Bildirimleri</router-link>
           </div>
         </transition>
-
-        <!-- Menü Linkleri -->
+        
         <div class="mainNav__links">
           <router-link to="/analizler" class="mainNav__link" @click.native="closeMenus">Analizler</router-link>
           <router-link to="/bildirim-ekle" class="mainNav__link" @click.native="closeMenus">Bildirim Ekle</router-link>
