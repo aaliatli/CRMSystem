@@ -3,7 +3,7 @@
     <template v-if="loading">
       <transition name="fade">
         <div class="splash-screen">
-          <h1 class="app-name">SoftCRM</h1>
+          <h1 class="app-name">AACRM</h1>
         </div>
       </transition>
     </template>
@@ -11,7 +11,7 @@
     <template v-else>
       <div class="main-content">
         <h2>Hoş geldiniz!</h2>
-        <p>SoftCRM sistemine giriş yaptınız. Devam etmek için menüleri kullanabilirsiniz.</p>
+        <p>AACRM sistemine hoşgeldiniz. Devam etmek için menüleri kullanabilirsiniz.</p>
       </div>
     </template>
   </div>
@@ -59,7 +59,6 @@ export default {
   animation: fadeInText 1.5s ease 1s forwards;
 }
 
-/* Animasyonlar */
 @keyframes dropIn {
   from {
     transform: translateY(-50px);
@@ -77,7 +76,6 @@ export default {
   }
 }
 
-/* Geçiş efektleri */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease;
 }
@@ -86,6 +84,28 @@ export default {
 }
 
 .main-content {
-  min-height: 100vh;
+  min-height: 65vh;
 }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main-content h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.main-content p {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
 </style>

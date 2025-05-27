@@ -1,5 +1,7 @@
 package com.example.WebProject2.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,16 @@ public class LoginService{
     private LoginRepository loginRepo;
 
     
-    public boolean login(String userMail, String userPassword){
-        Login user = loginRepo.findByUserMail(userMail);
-        return user != null && user.getUserPassword().equals(userPassword);
+    public Login getByCredentials(String mail, String password) {
+    Login user = loginRepo.findByUserMail(mail);
+    if (user != null && user.getUserPassword().equals(password)) {
+        return user;
+    }
+    return null;
+    }
+
+    public List<Login> getAllUsers(){
+        return loginRepo.findAll();
     }
 
 }

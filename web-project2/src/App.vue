@@ -1,34 +1,44 @@
-<script setup>
-import Menu from './components/Header/Menu.vue';
-import HomePage from './components/HomePage.vue';
-</script>
-
 <template>
-  <header>
-    <Menu></Menu>
+  <header :key="isLoggedIn">
+    <Unauthorized v-if="!isLoggedIn" @login="login" />
+    <Menu v-else @logout="logout" />
   </header>
   <main>
-    <router-view></router-view>
+    <router-view />
   </main>
 </template>
 
 <script>
+import Menu from './components/Header/Menu.vue';
+import Unauthorized from './components/Header/Unauthorized.vue';
 
 export default {
-  components:{
-    Menu,
-    HomePage
-  },
-  server: {
-    open: true 
-  },
+  components: { Menu, Unauthorized },
   data() {
     return {
-      mesaj: ''
+      isLoggedIn: false
     };
   },
+  created() {
+    this.checkLogin();
+  },
+  methods: {
+    checkLogin() {
+      this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    },
+    login() {
+      localStorage.setItem("isLoggedIn", "true");
+      this.isLoggedIn = true;
+    },
+    logout() {
+      localStorage.removeItem("isLoggedIn");
+      this.isLoggedIn = false;
+    }
+  }
 };
 </script>
+
+
 
 <style scoped>
 header {

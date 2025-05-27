@@ -1,6 +1,5 @@
 <template>
   <div class="progress-wrapper">
-    <!-- CS Progress Bar -->
     <div class="process-bar">
       <div class="progress-bar">
         <div
@@ -12,7 +11,6 @@
       <span class="label-bottom">CS</span>
     </div>
 
-    <!-- Desk 1 Progress Bar -->
     <div class="process-bar">
       <div class="progress-bar">
         <div
@@ -24,7 +22,6 @@
       <span class="label-bottom">Desk 1</span>
     </div>
 
-    <!-- Desk 2 Progress Bar -->
     <div class="process-bar">
       <div class="progress-bar">
         <div
@@ -36,7 +33,6 @@
       <span class="label-bottom">Desk 2</span>
     </div>
 
-    <!-- Desk 3 Progress Bar -->
     <div class="process-bar">
       <div class="progress-bar">
         <div

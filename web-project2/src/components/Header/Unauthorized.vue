@@ -2,36 +2,20 @@
   <div>
     <nav class="mainNav" ref="nav">
       <div class="mainNav__start">
-        <div class="mainNav__hamburger" @click.stop="toggleLeftMenu">
-          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="30" height="30">
-            <rect width="100" height="10" rx="5"></rect>
-            <rect y="30" width="100" height="10" rx="5"></rect>
-            <rect y="60" width="100" height="10" rx="5"></rect>
-          </svg>
-        </div>
-
-        <transition name="fade">
-          <div v-if="leftMenuOpen" class="dropdownMenu left" @click.stop>
-            <router-link to="/bildirimler" class="dropdownItem" @click.native="closeMenus">Emanet Bildirimleri</router-link>
-            <router-link to="/sikayetler" class="dropdownItem" @click.native="closeMenus">Şikayet Bildirimleri</router-link>
-            <router-link to="/magaza-bildirimleri" class="dropdownItem" @click.native="closeMenus">Mağaza Bildirimleri</router-link>
-          </div>
-        </transition>
         
         <div class="mainNav__links">
-          <router-link to="/analizler" class="mainNav__link" @click.native="closeMenus">Analizler</router-link>
-          <router-link to="/bildirim-ekle" class="mainNav__link" @click.native="closeMenus">Bildirim Ekle</router-link>
+          <router-link to="/hakkimizda" class="mainNav__link" @click.native="closeMenus">Hakkımızda</router-link>
+          <router-link to="/cozumler" class="mainNav__link" @click.native="closeMenus">Çözümler</router-link>
+          <router-link to="/iletisim" class="mainNav__link" @click.native="closeMenus">İletişim</router-link>
+        </div>
+
+        <div class="mainNav__links">
+          <router-link to="/giris" class="mainNav__link" @click.native="closeMenus">Giriş</router-link>
         </div>
       </div>
 
-      <div class="mainNav__logo" @click.stop="toggleRightMenu">
+      <div class="mainNav_logo">
         <img :src="logo" alt="AACRM Logo" class="logo-img" />
-        <transition name="fade">
-          <div v-if="rightMenuOpen" class="dropdownMenu right" @click.stop>
-            <router-link to="/kullanicilar" class="dropdownItem" @click.native="closeMenus">Kullanıcılar</router-link>
-            <router-link to="/" @click="$emit('logout')" class="dropdownItem" @click.native="closeMenus">Çıkış</router-link>
-          </div>
-        </transition>
       </div>
     </nav>
   </div>
@@ -79,6 +63,20 @@ export default {
 
 
 <style> 
+
+.mainNav_logo {
+  position: relative;
+  cursor: pointer;
+  padding-right: 55px;
+}
+
+.mainNav_logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -103,6 +101,7 @@ body {
   padding: 0 30px;
   z-index: 999;
 }
+
 .mainNav__start {
   display: flex;
   align-items: center;
@@ -160,7 +159,7 @@ body {
 }
 
 .dropdownMenu.right {
-  margin-right: 55px;
+  right: 0;
 }
 
 .dropdownItem {

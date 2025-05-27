@@ -106,7 +106,7 @@
           <tr>
             <td class="notification-bottom" v-if="sendedOption">Gönderildi</td>
             <td class="notification-bottom" v-else></td>
-            <td class="notification-corner">Destek: destek@softcrm.com</td>
+            <td class="notification-corner">Destek: destek@aacrm.com</td>
           </tr>
         </tbody>
       </table>
