@@ -19,7 +19,7 @@ import com.example.WebProject2.repository.StoreNotificationRepository;
 @RequestMapping("/api")
 @RestController
 @CrossOrigin(origins="*")
-public class ResponseNotificationController {
+public class ListNotificationController {
 
     @Autowired
     public NotificationRepository notificationRepo;

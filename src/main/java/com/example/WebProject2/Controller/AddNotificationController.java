@@ -41,7 +41,7 @@ public class AddNotificationController {
             StoreNotification store;
 
             if (stores != null && !stores.isEmpty()) {
-                store = stores.get(0); // varsa ilk kaydı kullan
+                store = stores.get(0); 
             } else {
                 store = new StoreNotification();
                 store.setStoreLocation(notification.getStoreLocation());
