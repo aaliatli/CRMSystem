@@ -42,7 +42,7 @@ export default{
 
             if (response.data !== "Hatalı kullanıcı adı ya da şifre") {
             localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("loggedInUser", response.data); // 👈 mail adresini kaydet
+            localStorage.setItem("loggedInUser", response.data); 
             this.loginSuccess = true;
             this.$router.replace('/analizler').then(() => {
                 location.reload(); 
