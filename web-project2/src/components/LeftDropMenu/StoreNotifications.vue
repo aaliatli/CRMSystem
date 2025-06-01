@@ -7,7 +7,7 @@
             <div>
               <table>
                 <h5>Mağaza Bildirimleri</h5>
-                <tr>
+                <tr class="width">
                   <td>Desk</td>
                   <td>Mağaza</td>
                 </tr>

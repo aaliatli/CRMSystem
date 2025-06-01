@@ -1,9 +1,9 @@
 <template>
-  <div class="all-notification-container">
-    <table class="all-notificaiton">
+  <div class="deposit-container">
+    <table>
       <tbody>
         <tr>
-          <td class="all-notification-left">
+          <td class="deposit-left">
             <div class="select-bar">
               <button
                 v-for="option in options"
@@ -139,7 +139,7 @@ export default {
         setTimeout(async () => {
           await axios.delete(`http://localhost:8081/api/notifications/${id}`);      
           await this.fetchNotifications(); 
-        }, 2500)
+        }, 1000)
       }catch(error){
         console.error("Silme hatası: ", error)
       }
@@ -196,16 +196,21 @@ export default {
 }
 
 
-.all-notification-container {
+.deposit-container {
   padding: 2% 6%;
 }
 
-.all-notification {
+.deposit {
   width: 100%;
   border-collapse: collapse;
 }
 
-.all-notification td {
+.width{
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.deposit td {
 
   background-color: #fff;
   

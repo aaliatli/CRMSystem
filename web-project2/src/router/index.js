@@ -10,6 +10,7 @@ import Login from '@/components/Login.vue'
 import AboutUs from '@/components/LoggedOutMenu/AboutUs.vue'
 import Solutions from '@/components/LoggedOutMenu/Solutions.vue'
 import ContactUs from '@/components/LoggedOutMenu/ContactUs.vue'
+import AllNotifications from '@/components/LeftDropMenu/AllNotifications.vue'
 
 const routes = [
   { path: '/', component: HomePage },
@@ -17,7 +18,7 @@ const routes = [
   { path: '/hakkimizda', component: AboutUs },
   { path: '/cozumler', component: Solutions },
   { path: '/iletisim', component: ContactUs },
-
+  { path: '/tum-bildirimler', component: AllNotifications},
   { path: '/bildirim-ekle', component: AddNotification, meta: { requiresAuth: true }},
   { path: '/sikayetler', component: Reports, meta: { requiresAuth: true }},
   { path: '/kullanicilar', component: Users, meta: { requiresAuth: true }},

@@ -53,11 +53,6 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      service: 'gunluk',
-      options: [
-        { label: 'Günlük Analiz', value: 'gunluk' },
-        { label: 'Haftalık Analiz', value: 'haftalik' }
-      ],
       notifications: [],
       csCount: 0,
       desk1Count: 0,

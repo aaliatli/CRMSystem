@@ -1,25 +1,21 @@
 <template>
-    <div class="login-container">
-        <table>
-            <tr>
-                <td>
-                    <label for="mail">Kullanıcı: </label>
-                    <input type="mail" placeholder="e-mail" v-model="userMail" required >
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="password">Şifre: </label>
-                    <input type="password" v-model="userPassword" required >
-                </td>
-            </tr>
-            <tr>
-                <td><button @click="submitUsers">Giriş</button></td>
-            </tr>
-        </table>
-        <p v-if="loginSuccess === false">Giriş bilgilerini kontrol edin!</p>
-    </div>
+  <div class="login-container">
+    <form @submit.prevent="submitUsers">
+      <div class="form-group">
+        <label for="mail">Kullanıcı:</label>
+        <input id="mail" type="email" placeholder="e-mail" v-model="userMail" required />
+      </div>
 
+      <div class="form-group">
+        <label for="password">Şifre:</label>
+        <input id="password" type="password" v-model="userPassword" required />
+      </div>
+
+      <button type="submit">Giriş</button>
+
+      <p v-if="loginSuccess === false" class="error-text">Giriş bilgilerini kontrol edin!</p>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -42,7 +38,7 @@ export default{
 
             if (response.data !== "Hatalı kullanıcı adı ya da şifre") {
             localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("loggedInUser", response.data); // 👈 mail adresini kaydet
+            localStorage.setItem("loggedInUser", response.data); 
             this.loginSuccess = true;
             this.$router.replace('/analizler').then(() => {
                 location.reload(); 

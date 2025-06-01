@@ -15,6 +15,7 @@
             <router-link to="/bildirimler" class="dropdownItem" @click.native="closeMenus">Emanet Bildirimleri</router-link>
             <router-link to="/sikayetler" class="dropdownItem" @click.native="closeMenus">Şikayet Bildirimleri</router-link>
             <router-link to="/magaza-bildirimleri" class="dropdownItem" @click.native="closeMenus">Mağaza Bildirimleri</router-link>
+            <router-link to="/tum-bildirimler" class="dropdownItem" @click.native="closeMenus">Tüm bildirimler</router-link>
           </div>
         </transition>
         

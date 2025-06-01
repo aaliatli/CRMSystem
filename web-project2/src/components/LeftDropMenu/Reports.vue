@@ -7,7 +7,7 @@
             <div>
               <table v-if="service === 'Şikayet'">
                 <h5>Şikayet Bildirimleri</h5>
-                <tr>
+                <tr class="width">
                   <td>Durum</td>
                   <td>İsim</td>
                   <td>Telefon</td>
@@ -73,7 +73,7 @@ export default{
           setTimeout(async () => {
             await axios.delete(`http://localhost:8081/api/notifications/${id}`);
             await this.fetchNotifications(); 
-          }, 2500);
+          }, 1000);
         } catch (error) {
           console.error("Silme hatası: ", error);
         }
